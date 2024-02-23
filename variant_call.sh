@@ -115,7 +115,7 @@ fastqc ${reads}/*fastq.gz
 ## !!!(this part depends on the quality of data, be sure to "modify" accordingly; for manual on trimmomatic: http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf) !!!
 
 ### The data was already in good shape as checked by fastqc. Some adapter sequences were trimmed at the 3` ends
-trimmomatic PE -phred33 -threads 16 ${reads}/SRR25434456_1.fastq.gz ${reads}/SRR25434456_2.fastq.gz ${t_reads}/fwd_SRR25434456_p.fastq.gz ${t_reads}/fwd_SRR25434456_up.fastq.gz ${t_reads}/rev_SRR25434456_p.fastq.gz ${t_reads}/rev_SRR25434456_up.fastq.gz SLIDINGWINDOW:4:10
+trimmomatic PE -phred33 -threads 16 SRR25434456_1.fastq.gz SRR25434456_2.fastq.gz fwd_SRR25434456_p.fastq.gz fwd_SRR25434456_up.fastq.gz rev_SRR25434456_p.fastq.gz rev_SRR25434456_up.fastq.gz CROP:120 SLIDINGWINDOW:4:10
 fastqc ${t_reads}/*fastq.gz
 
 
